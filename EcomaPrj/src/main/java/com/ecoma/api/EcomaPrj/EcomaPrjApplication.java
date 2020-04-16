@@ -1,4 +1,4 @@
-package com.ecoma.kamal.EcomaPrj;
+package com.ecoma.api.EcomaPrj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.ecoma.kamal.EcomaPrj.Resource;
+package com.ecoma.api.EcomaPrj.Resource;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ecoma.kamal.EcomaPrj.Models.Person;
-import com.ecoma.kamal.EcomaPrj.Repository.PersonRepository;
+import com.ecoma.api.EcomaPrj.Models.Person;
+import com.ecoma.api.EcomaPrj.Repository.PersonRepository;
 
 
 @RestController
@@ -23,6 +23,8 @@ public class PersonController {
 	
 	@PostMapping("/addPerson")
 	public String saveAdmin(@RequestBody Person person) {
+		System.out.println("holaaa");
+		System.out.println("email "+person.getEmail());
 		personRepository.save(person);
 		return "Added person with id : "+person.getId();
 	}
