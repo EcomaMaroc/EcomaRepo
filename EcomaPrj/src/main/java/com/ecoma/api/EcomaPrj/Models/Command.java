@@ -1,5 +1,7 @@
 package com.ecoma.api.EcomaPrj.Models;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,44 +15,40 @@ public class Command {
 	
 	@Id
     private long id;
-	private double Qte;
-	private String Description;
-	private String BuyerCin;
-	private String BuyerAdress;
-	private String BuyerName;
-	private double Price;
-	private boolean AdminIsPayed;
-	private boolean DeliveryManIsPayed;
-	@DBRef
-	private Product Product;
-	@DBRef
-	private TeamMember TeamMember;
-	@DBRef
-	private DeliveryMan DeliveryMan;
-	@DBRef
-	private State State;
+	private double totalQte;
+	private String description;
+	private String buyerCin;
+	private String buyerAdress;
+	private String buyerName;
+	private double totalPrice;
+	private boolean adminIsPayed;
+	private boolean deliveryManIsPayed;
+	private List<Long> idProduct;
+	private long idTeamMember;
+	private long idDeliveryMan;
+	private long idState;
 	
 	public Command() {
 		
 	}
 
-	public Command(long id, double qte, String description, String buyerCin, String buyerAdress, String buyerName,
-			double price, boolean adminIsPayed, boolean deliveryManIsPayed, Product product, TeamMember teamMember,
-			DeliveryMan deliveryMan, State state) {
+	public Command(long id, double totalQte, String description, String buyerCin, String buyerAdress, String buyerName,
+			double totalPrice, boolean adminIsPayed, boolean deliveryManIsPayed, List<Long> idProduct,
+			long idTeamMember, long idDeliveryMan, long idState) {
 		super();
 		this.id = id;
-		Qte = qte;
-		Description = description;
-		BuyerCin = buyerCin;
-		BuyerAdress = buyerAdress;
-		BuyerName = buyerName;
-		Price = price;
-		AdminIsPayed = adminIsPayed;
-		DeliveryManIsPayed = deliveryManIsPayed;
-		Product = product;
-		TeamMember = teamMember;
-		DeliveryMan = deliveryMan;
-		State = state;
+		this.totalQte = totalQte;
+		this.description = description;
+		this.buyerCin = buyerCin;
+		this.buyerAdress = buyerAdress;
+		this.buyerName = buyerName;
+		this.totalPrice = totalPrice;
+		this.adminIsPayed = adminIsPayed;
+		this.deliveryManIsPayed = deliveryManIsPayed;
+		this.idProduct = idProduct;
+		this.idTeamMember = idTeamMember;
+		this.idDeliveryMan = idDeliveryMan;
+		this.idState = idState;
 	}
 
 	public long getId() {
@@ -61,110 +59,108 @@ public class Command {
 		this.id = id;
 	}
 
-	public double getQte() {
-		return Qte;
+	public double getTotalQte() {
+		return totalQte;
 	}
 
-	public void setQte(double qte) {
-		Qte = qte;
+	public void setTotalQte(double totalQte) {
+		this.totalQte = totalQte;
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 
 	public String getBuyerCin() {
-		return BuyerCin;
+		return buyerCin;
 	}
 
 	public void setBuyerCin(String buyerCin) {
-		BuyerCin = buyerCin;
+		this.buyerCin = buyerCin;
 	}
 
 	public String getBuyerAdress() {
-		return BuyerAdress;
+		return buyerAdress;
 	}
 
 	public void setBuyerAdress(String buyerAdress) {
-		BuyerAdress = buyerAdress;
+		this.buyerAdress = buyerAdress;
 	}
 
 	public String getBuyerName() {
-		return BuyerName;
+		return buyerName;
 	}
 
 	public void setBuyerName(String buyerName) {
-		BuyerName = buyerName;
+		this.buyerName = buyerName;
 	}
 
-	public double getPrice() {
-		return Price;
+	public double getTotalPrice() {
+		return totalPrice;
 	}
 
-	public void setPrice(double price) {
-		Price = price;
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 
 	public boolean isAdminIsPayed() {
-		return AdminIsPayed;
+		return adminIsPayed;
 	}
 
 	public void setAdminIsPayed(boolean adminIsPayed) {
-		AdminIsPayed = adminIsPayed;
+		this.adminIsPayed = adminIsPayed;
 	}
 
 	public boolean isDeliveryManIsPayed() {
-		return DeliveryManIsPayed;
+		return deliveryManIsPayed;
 	}
 
 	public void setDeliveryManIsPayed(boolean deliveryManIsPayed) {
-		DeliveryManIsPayed = deliveryManIsPayed;
+		this.deliveryManIsPayed = deliveryManIsPayed;
 	}
 
-	public Product getProduct() {
-		return Product;
+	public List<Long> getIdProduct() {
+		return idProduct;
 	}
 
-	public void setProduct(Product product) {
-		Product = product;
+	public void setIdProduct(List<Long> idProduct) {
+		this.idProduct = idProduct;
 	}
 
-	public TeamMember getTeamMember() {
-		return TeamMember;
+	public long getIdTeamMember() {
+		return idTeamMember;
 	}
 
-	public void setTeamMember(TeamMember teamMember) {
-		TeamMember = teamMember;
+	public void setIdTeamMember(long idTeamMember) {
+		this.idTeamMember = idTeamMember;
 	}
 
-	public DeliveryMan getDeliveryMan() {
-		return DeliveryMan;
+	public long getIdDeliveryMan() {
+		return idDeliveryMan;
 	}
 
-	public void setDeliveryMan(DeliveryMan deliveryMan) {
-		DeliveryMan = deliveryMan;
+	public void setIdDeliveryMan(long idDeliveryMan) {
+		this.idDeliveryMan = idDeliveryMan;
 	}
 
-	public State getState() {
-		return State;
+	public long getIdState() {
+		return idState;
 	}
 
-	public void setState(State state) {
-		State = state;
+	public void setIdState(long idState) {
+		this.idState = idState;
 	}
 
 	@Override
 	public String toString() {
-		return "Command [id=" + id + ", Qte=" + Qte + ", Description=" + Description + ", BuyerCin=" + BuyerCin
-				+ ", BuyerAdress=" + BuyerAdress + ", BuyerName=" + BuyerName + ", Price=" + Price + ", AdminIsPayed="
-				+ AdminIsPayed + ", DeliveryManIsPayed=" + DeliveryManIsPayed + ", Product=" + Product + ", TeamMember="
-				+ TeamMember + ", DeliveryMan=" + DeliveryMan + ", State=" + State + "]";
+		return "Command [id=" + id + ", totalQte=" + totalQte + ", description=" + description + ", buyerCin="
+				+ buyerCin + ", buyerAdress=" + buyerAdress + ", buyerName=" + buyerName + ", totalPrice=" + totalPrice
+				+ ", adminIsPayed=" + adminIsPayed + ", deliveryManIsPayed=" + deliveryManIsPayed + ", idProduct="
+				+ idProduct + ", idTeamMember=" + idTeamMember + ", idDeliveryMan=" + idDeliveryMan + ", idState="
+				+ idState + "]";
 	}
-	
-	
-
 }

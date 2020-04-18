@@ -12,7 +12,7 @@ public class State {
 
 	@Id
     private long id;
-	private String Name;
+	private String name;
 	
 	public State() {
 		
@@ -21,7 +21,7 @@ public class State {
 	public State(long id, String name) {
 		super();
 		this.id = id;
-		Name = name;
+		this.name = name;
 	}
 
 	public long getId() {
@@ -33,16 +33,16 @@ public class State {
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", Name=" + Name + "]";
+		return "State [id=" + id + ", Name=" + this.name + "]";
 	}
 	
 }

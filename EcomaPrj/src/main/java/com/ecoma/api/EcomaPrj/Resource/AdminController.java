@@ -12,43 +12,46 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecoma.api.EcomaPrj.Models.Admin;
 import com.ecoma.api.EcomaPrj.Models.Category;
+import com.ecoma.api.EcomaPrj.Repository.AdminRepository;
 import com.ecoma.api.EcomaPrj.Repository.CategoryRepository;
 
 @RestController
-@RequestMapping("/Categories")
-public class CategoryController {
+@RequestMapping("/Admins")
+public class AdminController {
 
 	@Autowired
-    private CategoryRepository categoryRepository;
+    private AdminRepository adminRepository;
 	
 	@GetMapping("/all")
-	public List<Category> GetCategories(){
-		return categoryRepository.findAll();
+	public List<Admin> GetAdmins(){
+		return adminRepository.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public Optional<Category> getCategory(@PathVariable long id){
-		return categoryRepository.findById(id);
+	public Optional<Admin> getAdmin(@PathVariable long id){
+		return adminRepository.findById(id);
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	public String DeleteCategory(@PathVariable long id) {
-		categoryRepository.deleteById(id);
-		return "Category deleted with id :"+id;
+	public String DeleteAdmin(@PathVariable long id) {
+		adminRepository.deleteById(id);
+		return "Admin deleted with id :"+id;
 	}
 	
 	@PutMapping("/addOrUpdate/{id}")
-	public Category UpdateCategory(@RequestBody Category category, @PathVariable Long id) {
+	public Admin UpdateAdmin(@RequestBody Admin admin, @PathVariable Long id) {
 
-	    return categoryRepository.findById(id)
-	      .map(OldCategory -> {
-	    	  OldCategory.setName(category.getName());
-	        return categoryRepository.save(category);
+	    return adminRepository.findById(id)
+	      .map(OldAdmin -> {
+	    	  OldAdmin.setIdPerson(admin.getIdPerson());
+	    	  OldAdmin.setIdRole(admin.getIdRole());
+	        return adminRepository.save(admin);
 	      })
 	      .orElseGet(() -> {
-	    	  category.setId(id);
-	        return categoryRepository.save(category);
+	    	  admin.setId(id);
+	        return adminRepository.save(admin);
 	      });
 	  }
 }

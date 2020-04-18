@@ -10,120 +10,119 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "person")
 public class Person {
     @Id
-    private int id;
-    private String FirstName;
-    private String LastName;
-    private String Phone;
-    private String Email;
-    private String Picture;
-    private String Password;
-    private String Adress;
-    private int Age;
-    private String Cin;
+    private long id;
+    private String firstName;
+    private String lastName;
+    private String phone;
+    private String email;
+    private String picture;
+    private String password;
+    private String adress;
+    private int age;
+    private String cin;
 
     public Person() {
     }
 
-	public Person(int id, String firstName, String lastName, String phone, String email, String picture,
+	public Person(long id, String firstName, String lastName, String phone, String email, String picture,
 			String password, String adress, int age, String cin) {
 		super();
 		this.id = id;
-		this.FirstName = firstName;
-		this.LastName = lastName;
-		this.Phone = phone;
-		this.Email = email;
-		this.Picture = picture;
-		this.Password = password;
-		this.Adress = adress;
-		this.Age = age;
-		this.Cin = cin;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phone = phone;
+		this.email = email;
+		this.picture = picture;
+		this.password = password;
+		this.adress = adress;
+		this.age = age;
+		this.cin = cin;
 	}
 
 	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
 	public String getFirstName() {
-		return FirstName;
+		return firstName;
 	}
 
 	public void setFirstName(String firstName) {
-		FirstName = firstName;
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
-		return LastName;
+		return lastName;
 	}
 
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		this.lastName = lastName;
 	}
 
 	public String getPhone() {
-		return Phone;
+		return phone;
 	}
 
 	public void setPhone(String phone) {
-		Phone = phone;
+		this.phone = phone;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 
 	public String getPicture() {
-		return Picture;
+		return picture;
 	}
 
 	public void setPicture(String picture) {
-		Picture = picture;
+		this.picture = picture;
 	}
 
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 
 	public String getAdress() {
-		return Adress;
+		return adress;
 	}
 
 	public void setAdress(String adress) {
-		Adress = adress;
+		this.adress = adress;
 	}
 
 	public int getAge() {
-		return Age;
+		return age;
 	}
 
 	public void setAge(int age) {
-		Age = age;
+		this.age = age;
 	}
 
 	public String getCin() {
-		return Cin;
+		return cin;
 	}
 
 	public void setCin(String cin) {
-		Cin = cin;
+		this.cin = cin;
 	}
 
 	@Override
 	public String toString() {
-		return "Person [id=" + id + ", FirstName=" + FirstName + ", LastName=" + LastName + ", Phone=" + Phone
-				+ ", Email=" + Email + ", Picture=" + Picture + ", Password=" + Password + ", Adress=" + Adress
-				+ ", Age=" + Age + ", Cin=" + Cin + "]";
-	}
-    
+		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", phone=" + phone
+				+ ", email=" + email + ", picture=" + picture + ", password=" + password + ", adress=" + adress
+				+ ", age=" + age + ", cin=" + cin + "]";
+	}    
 }

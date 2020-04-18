@@ -1,5 +1,7 @@
 package com.ecoma.api.EcomaPrj.Models;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,165 +15,131 @@ public class Product {
 
 	@Id
     private long id;
-	private String Name;
-	private double Qte;
-	private double BuyingPrice;
-	private double SallingPrice;
-	private double CorruptPcs;
-	private double QteBuyed;
-	private double QteSaled;
-	private String Description;
-	@DBRef
-	private Category Category;
-	@DBRef
-	private Provider Provider;
-	@DBRef
-	private Color Color;
-	@DBRef
-	private Size Size;
-	@DBRef
-	private State State;
+	private String name;
+	private double qte;
+	private double buyingPrice;
+	private double sallingPrice;
+	private double corruptPcs;
+	private double qteBuyed;
+	private double qteSaled;
+	private String description;
+	private List<Long> idCategory;
+	private List<Long> idProvider;
+	private List<Long> idColor;
+	private List<Long> idSize;
+	private List<Long> idState;
 	
 	public Product() {
 		
 	}
 	public Product(long id, String name, double qte, double buyingPrice, double sallingPrice, double corruptPcs, double qteBuyed,
-			double qteSaled, String description, Category category, Provider provider,Color color, Size size, State state) {
+			double qteSaled, String description, List<Long> idcategory, List<Long> idprovider,List<Long> idcolor, List<Long> idsize, List<Long> idstate) {
 		super();
 		this.id = id;
-		this.Name = name;
-		this.Qte=qte;
-		this.BuyingPrice = buyingPrice;
-		this.SallingPrice = sallingPrice;
-		this.CorruptPcs = corruptPcs;
-		this.QteBuyed = qteBuyed;
-		this.QteSaled = qteSaled;
-		this.Description = description;
-		this.Category = category;
-		this.Provider = provider;
-		this.Color = color;
-		this.Size = size;
-		this.State = state;
+		this.name = name;
+		this.qte=qte;
+		this.buyingPrice = buyingPrice;
+		this.sallingPrice = sallingPrice;
+		this.corruptPcs = corruptPcs;
+		this.qteBuyed = qteBuyed;
+		this.qteSaled = qteSaled;
+		this.description = description;
+		this.idCategory = idcategory;
+		this.idProvider = idprovider;
+		this.idColor = idcolor;
+		this.idSize = idsize;
+		this.idState = idstate;
 	}
-
 	public long getId() {
 		return id;
 	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
-
 	public String getName() {
-		return Name;
+		return name;
 	}
-
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
-	
 	public double getQte() {
-		return Qte;
+		return qte;
 	}
-
 	public void setQte(double qte) {
-		Qte = qte;
+		this.qte = qte;
 	}
-
 	public double getBuyingPrice() {
-		return BuyingPrice;
+		return buyingPrice;
 	}
-
 	public void setBuyingPrice(double buyingPrice) {
-		BuyingPrice = buyingPrice;
+		this.buyingPrice = buyingPrice;
 	}
-
 	public double getSallingPrice() {
-		return SallingPrice;
+		return sallingPrice;
 	}
-
 	public void setSallingPrice(double sallingPrice) {
-		SallingPrice = sallingPrice;
+		this.sallingPrice = sallingPrice;
 	}
-
 	public double getCorruptPcs() {
-		return CorruptPcs;
+		return corruptPcs;
 	}
-
 	public void setCorruptPcs(double corruptPcs) {
-		CorruptPcs = corruptPcs;
+		this.corruptPcs = corruptPcs;
 	}
-
 	public double getQteBuyed() {
-		return QteBuyed;
+		return qteBuyed;
 	}
-
 	public void setQteBuyed(double qteBuyed) {
-		QteBuyed = qteBuyed;
+		this.qteBuyed = qteBuyed;
 	}
-
 	public double getQteSaled() {
-		return QteSaled;
+		return qteSaled;
 	}
-
 	public void setQteSaled(double qteSaled) {
-		QteSaled = qteSaled;
+		this.qteSaled = qteSaled;
 	}
-
 	public String getDescription() {
-		return Description;
+		return description;
 	}
-
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
-
-	public Category getCategory() {
-		return Category;
+	public List<Long> getIdCategory() {
+		return idCategory;
 	}
-
-	public void setCategory(Category category) {
-		Category = category;
+	public void setIdCategory(List<Long> idCategory) {
+		this.idCategory = idCategory;
 	}
-
-	public Provider getProvider() {
-		return Provider;
+	public List<Long> getIdProvider() {
+		return idProvider;
 	}
-
-	public void setProvider(Provider provider) {
-		Provider = provider;
+	public void setIdProvider(List<Long> idProvider) {
+		this.idProvider = idProvider;
 	}
-
-	public Color getColor() {
-		return Color;
+	public List<Long> getIdColor() {
+		return idColor;
 	}
-
-	public void setColor(Color color) {
-		Color = color;
+	public void setIdColor(List<Long> idColor) {
+		this.idColor = idColor;
 	}
-
-	public Size getSize() {
-		return Size;
+	public List<Long> getIdSize() {
+		return idSize;
 	}
-
-	public void setSize(Size size) {
-		Size = size;
+	public void setIdSize(List<Long> idSize) {
+		this.idSize = idSize;
 	}
-
-	public State getState() {
-		return State;
+	public List<Long> getIdState() {
+		return idState;
 	}
-
-	public void setState(State state) {
-		State = state;
+	public void setIdState(List<Long> idState) {
+		this.idState = idState;
 	}
-
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", Name=" + Name + ", BuyingPrice=" + BuyingPrice + ", SallingPrice="
-				+ SallingPrice + ", CorruptPcs=" + CorruptPcs + ", QteBuyed=" + QteBuyed + ", QteSaled=" + QteSaled
-				+ ", Description=" + Description + ", Category=" + Category + ", Provider=" + Provider + ", Color="
-				+ Color + ", Size=" + Size + ", State=" + State + "]";
+		return "Product [id=" + id + ", name=" + name + ", qte=" + qte + ", buyingPrice=" + buyingPrice
+				+ ", sallingPrice=" + sallingPrice + ", corruptPcs=" + corruptPcs + ", qteBuyed=" + qteBuyed
+				+ ", qteSaled=" + qteSaled + ", description=" + description + ", idCategory=" + idCategory
+				+ ", idProvider=" + idProvider + ", idColor=" + idColor + ", idSize=" + idSize + ", idState=" + idState
+				+ "]";
 	}
-	
 }

@@ -12,20 +12,20 @@ public class TeamMember {
 
 	@Id
     private long id;
-	private Person Person;
-	private Role Role;
-	private Admin Admin; 
+	private long idPerson;
+	private long idRole;
+	private long idAdmin; 
 	
 	public TeamMember() {
 		
 	}
 
-	public TeamMember(long id, Person person, Role role, Admin admin) {
+	public TeamMember(long id, long idperson, long idrole, long idadmin) {
 		super();
 		this.id = id;
-		Person = person;
-		Role = role;
-		Admin = admin;
+		idPerson = idperson;
+		idRole = idrole;
+		idAdmin = idadmin;
 	}
 
 	public long getId() {
@@ -36,34 +36,32 @@ public class TeamMember {
 		this.id = id;
 	}
 
-	public Person getPerson() {
-		return Person;
+	public long getIdPerson() {
+		return idPerson;
 	}
 
-	public void setPerson(Person person) {
-		Person = person;
+	public void setIdPerson(long idPerson) {
+		this.idPerson = idPerson;
 	}
 
-	public Role getRole() {
-		return Role;
+	public long getIdRole() {
+		return idRole;
 	}
 
-	public void setRole(Role role) {
-		Role = role;
+	public void setIdRole(long idRole) {
+		this.idRole = idRole;
 	}
 
-	public Admin getAdmin() {
-		return Admin;
+	public long getIdAdmin() {
+		return idAdmin;
 	}
 
-	public void setAdmin(Admin admin) {
-		Admin = admin;
+	public void setIdAdmin(long idAdmin) {
+		this.idAdmin = idAdmin;
 	}
 
 	@Override
 	public String toString() {
-		return "TeamMember [id=" + id + ", Person=" + Person + ", Role=" + Role + ", Admin=" + Admin + "]";
-	}
-	
-	
+		return "TeamMember [id=" + id + ", IdPerson=" + idPerson + ", IdRole=" + idRole + ", IdAdmin=" + idAdmin + "]";
+	}	
 }

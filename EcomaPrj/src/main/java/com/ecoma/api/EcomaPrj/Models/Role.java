@@ -12,7 +12,7 @@ public class Role {
 	
 	@Id
     private long id;
-	private String Name;
+	private String name;
 	
 	public Role() {
 		
@@ -21,7 +21,7 @@ public class Role {
 	public Role(long id, String name) {
 		super();
 		this.id = id;
-		Name = name;
+		this.name = name;
 	}
 
 	public long getId() {
@@ -33,16 +33,16 @@ public class Role {
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", Name=" + Name + "]";
+		return "Role [id=" + id + ", Name=" + this.name + "]";
 	}
 	
 }

@@ -13,42 +13,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ecoma.api.EcomaPrj.Models.Category;
+import com.ecoma.api.EcomaPrj.Models.State;
 import com.ecoma.api.EcomaPrj.Repository.CategoryRepository;
+import com.ecoma.api.EcomaPrj.Repository.StateRepository;
 
 @RestController
-@RequestMapping("/Categories")
-public class CategoryController {
+@RequestMapping("/States")
+public class StateController {
 
 	@Autowired
-    private CategoryRepository categoryRepository;
+    private StateRepository stateRepository;
 	
 	@GetMapping("/all")
-	public List<Category> GetCategories(){
-		return categoryRepository.findAll();
+	public List<State> GetStates(){
+		return stateRepository.findAll();
 	}
 	
 	@GetMapping("/{id}")
-	public Optional<Category> getCategory(@PathVariable long id){
-		return categoryRepository.findById(id);
+	public Optional<State> getState(@PathVariable long id){
+		return stateRepository.findById(id);
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	public String DeleteCategory(@PathVariable long id) {
-		categoryRepository.deleteById(id);
-		return "Category deleted with id :"+id;
+	public String DeleteState(@PathVariable long id) {
+		stateRepository.deleteById(id);
+		return "State deleted with id :"+id;
 	}
 	
 	@PutMapping("/addOrUpdate/{id}")
-	public Category UpdateCategory(@RequestBody Category category, @PathVariable Long id) {
+	public State UpdateState(@RequestBody State state, @PathVariable Long id) {
 
-	    return categoryRepository.findById(id)
-	      .map(OldCategory -> {
-	    	  OldCategory.setName(category.getName());
-	        return categoryRepository.save(category);
+	    return stateRepository.findById(id)
+	      .map(Oldstate -> {
+	    	  Oldstate.setName(state.getName());
+	        return stateRepository.save(state);
 	      })
 	      .orElseGet(() -> {
-	    	  category.setId(id);
-	        return categoryRepository.save(category);
+	    	  state.setId(id);
+	        return stateRepository.save(state);
 	      });
 	  }
 }

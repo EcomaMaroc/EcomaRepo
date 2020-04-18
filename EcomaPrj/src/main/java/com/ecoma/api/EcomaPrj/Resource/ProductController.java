@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ecoma.api.EcomaPrj.Models.Color;
 import com.ecoma.api.EcomaPrj.Models.Person;
 import com.ecoma.api.EcomaPrj.Models.Product;
+import com.ecoma.api.EcomaPrj.Models.Size;
 import com.ecoma.api.EcomaPrj.Repository.ProductRepository;
 
 @RestController
@@ -60,11 +62,11 @@ public class ProductController {
 	    	OldProduct.setQteBuyed(product.getQteBuyed());
 	    	OldProduct.setQteSaled(product.getQteSaled());
 	    	OldProduct.setDescription(product.getDescription());
-	    	OldProduct.setCategory(product.getCategory());
-	    	OldProduct.setProvider(product.getProvider());
-	    	OldProduct.setColor(product.getColor());
-	    	OldProduct.setSize(product.getSize());
-	    	OldProduct.setState(product.getState());
+	    	OldProduct.setIdCategory(product.getIdCategory());
+	    	OldProduct.setIdProvider(product.getIdProvider());
+	    	OldProduct.setIdColor(product.getIdColor());
+	    	OldProduct.setIdSize(product.getIdSize());
+	    	OldProduct.setIdState(product.getIdState());
 	        return productRepository.save(product);
 	      })
 	      .orElseGet(() -> {
