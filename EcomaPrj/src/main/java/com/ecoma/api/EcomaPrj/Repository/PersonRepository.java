@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ecoma.api.EcomaPrj.Models.Person;
 
+
 @Repository
 public interface PersonRepository extends MongoRepository<Person, Long>{
 

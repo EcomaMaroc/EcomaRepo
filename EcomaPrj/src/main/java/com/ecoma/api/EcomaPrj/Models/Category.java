@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Category {
 	@Id
     private long id;
-	private String Name;
+	private String name;
 	
 	public Category() {
 		
@@ -20,7 +20,7 @@ public class Category {
 	public Category(int id, String name) {
 		super();
 		this.id = id;
-		Name = name;
+		this.name = name;
 	}
 
 	public long getId() {
@@ -32,16 +32,16 @@ public class Category {
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", Name=" + Name + "]";
+		return "Category [id=" + id + ", Name=" + this.name + "]";
 	}
 	
 }

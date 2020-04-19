@@ -12,18 +12,18 @@ public class Admin {
 	
 	@Id
     private long id;
-	private Person Person;
-	private Role Role;
+	private long idPerson;
+	private long idRole;
 	
 	public Admin() {
 		
 	}
-	
-	public Admin(long id, Person person, Role role) {
+
+	public Admin(long id, long idPerson, long idRole) {
 		super();
 		this.id = id;
-		Person = person;
-		Role = role;
+		this.idPerson = idPerson;
+		this.idRole = idRole;
 	}
 
 	public long getId() {
@@ -34,26 +34,24 @@ public class Admin {
 		this.id = id;
 	}
 
-	public Person getPerson() {
-		return Person;
+	public long getIdPerson() {
+		return idPerson;
 	}
 
-	public void setPerson(Person person) {
-		Person = person;
+	public void setIdPerson(long idPerson) {
+		this.idPerson = idPerson;
 	}
 
-	public Role getRole() {
-		return Role;
+	public long getIdRole() {
+		return idRole;
 	}
 
-	public void setRole(Role role) {
-		Role = role;
+	public void setIdRole(long idRole) {
+		this.idRole = idRole;
 	}
 
 	@Override
 	public String toString() {
-		return "Admin [id=" + id + ", Person=" + Person + ", Role=" + Role + "]";
+		return "Admin [id=" + id + ", idPerson=" + idPerson + ", idRole=" + idRole + "]";
 	}
-
-	
 }

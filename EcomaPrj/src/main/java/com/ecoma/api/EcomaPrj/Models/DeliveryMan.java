@@ -12,33 +12,24 @@ public class DeliveryMan {
 
 	@Id
     private long id;
-	private Person Person;
-	private Role Role;
-	private double Rating;
-	private String Type;
-	private long DeliveredsIteamsNbr;
+	private long idPerson;
+	private long idRole;
+	private double rating;
+	private String type;
+	private long deliveredsIteamsNbr;
 	
 	public DeliveryMan() {
 		
 	}
 
-	public DeliveryMan(long id, Person person, Role role, double rating, String type,
-			long deliveredsIteamsNbr) {
+	public DeliveryMan(long id, long idperson, long idrole, double rating, String type, long deliveredsIteamsNbr) {
 		super();
 		this.id = id;
-		this.Person = person;
-		this.Role = role;
-		this.Rating = rating;
-		this.Type = type;
-		this.DeliveredsIteamsNbr = deliveredsIteamsNbr;
-	}
-
-	public Person getPerson() {
-		return Person;
-	}
-
-	public void setPerson(Person person) {
-		Person = person;
+		this.idPerson = idperson;
+		this.idRole = idrole;
+		this.rating = rating;
+		this.type = type;
+		this.deliveredsIteamsNbr = deliveredsIteamsNbr;
 	}
 
 	public long getId() {
@@ -49,41 +40,49 @@ public class DeliveryMan {
 		this.id = id;
 	}
 
-	public Role getRole() {
-		return Role;
+	public long getIdPerson() {
+		return idPerson;
 	}
 
-	public void setRole(Role role) {
-		Role = role;
+	public void setIdPerson(long idPerson) {
+		this.idPerson = idPerson;
+	}
+
+	public long getIdRole() {
+		return idRole;
+	}
+
+	public void setIdRole(long idRole) {
+		this.idRole = idRole;
 	}
 
 	public double getRating() {
-		return Rating;
+		return rating;
 	}
 
 	public void setRating(double rating) {
-		Rating = rating;
+		this.rating = rating;
 	}
 
 	public String getType() {
-		return Type;
+		return type;
 	}
 
 	public void setType(String type) {
-		Type = type;
+		this.type = type;
 	}
 
 	public long getDeliveredsIteamsNbr() {
-		return DeliveredsIteamsNbr;
+		return deliveredsIteamsNbr;
 	}
 
 	public void setDeliveredsIteamsNbr(long deliveredsIteamsNbr) {
-		DeliveredsIteamsNbr = deliveredsIteamsNbr;
+		this.deliveredsIteamsNbr = deliveredsIteamsNbr;
 	}
 
 	@Override
 	public String toString() {
-		return "DeliveryMan [id=" + id + ", Person=" + Person + ", Role=" + Role + ", Rating=" + Rating + ", Type="
-				+ Type + ", DeliveredsIteamsNbr=" + DeliveredsIteamsNbr + "]";
-	}	
+		return "DeliveryMan [id=" + id + ", idPerson=" + idPerson + ", idRole=" + idRole + ", rating=" + rating
+				+ ", type=" + type + ", deliveredsIteamsNbr=" + deliveredsIteamsNbr + "]";
+	}
 }
