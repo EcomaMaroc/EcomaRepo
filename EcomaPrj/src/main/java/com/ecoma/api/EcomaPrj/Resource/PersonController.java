@@ -35,12 +35,12 @@ public class PersonController {
 	}
 	
 	@GetMapping("/findPersons/{id}")
-	public Optional<Person> getPerson(@PathVariable int id){
+	public Optional<Person> getPerson(@PathVariable Long id){
 		return personRepository.findById(id);
 	}
 	
 	@DeleteMapping("/delete/{id}")
-	public String DeletePerson(@PathVariable int id) {
+	public String DeletePerson(@PathVariable Long id) {
 		personRepository.deleteById(id);
 		return "Person deleted with id :"+id;
 	}
